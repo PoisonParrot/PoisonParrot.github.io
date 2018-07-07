@@ -1,26 +1,131 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=no"/>
-    <title>2048小游戏</title>
-    <link rel="stylesheet" type="text/css" href="./css/style.css"/>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>双面魔方</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       ul {
+            animation: rota 8s infinite;
+        }
+        @keyframes rota {
+            100%{
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+        }
+        .box1 {
+              width: 200px;
+              margin: 200px auto;
+              list-style: none;
+              transform-style: preserve-3d;
+              position: relative;
+              transition:all 8s;
+          }
+        .box2{
+            width: 200px;
+            margin: 200px auto;
+            list-style: none;
+            transform-style: preserve-3d;
+            position: relative;
+            transition:all 8s;
+        }
+        .box1 li {
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            /*opacity: .8;*/
+        }
+        .box2 li {
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            opacity: .5;
+        }
+        /*背面*/
+        .box1 li:nth-child(1){
+            background-color: red;
+            transform: translateZ(-75px);
+        }
+        /*正面*/
+        .box1 li:nth-child(2){
+            background-color: orange;
+            transform: translateZ(75px);
+        }
+        /*左边*/
+        .box1 li:nth-child(3){
+            background-color: hotpink;
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+        /*右边*/
+        .box1 li:nth-child(4){
+            background-color: purple;
+            transform: rotateY(-270deg) translateZ(75px);
+        }
+        /*上面*/
+        .box1 li:nth-child(5){
+            background-color: yellowgreen;
+            transform: rotateX(90deg) translateZ(-75px);
+        }/*下面*/
+        .box1 li:nth-child(6){
+            background-color: skyblue;
+            transform: rotateX(90deg) translateZ(75px);
+        }
+
+
+
+        /*背面*/
+        .box2 li:nth-child(1){
+            background-color: red;
+            transform: translateZ(-250px);
+        }
+        /*正面*/
+        .box2 li:nth-child(2){
+            background-color: orange;
+            transform: translateZ(250px);
+        }
+        /*左边*/
+        .box2 li:nth-child(3){
+            background-color: hotpink;
+            transform: rotateY(-90deg) translateZ(250px);
+        }
+        /*右边*/
+        .box2 li:nth-child(4){
+            background-color: purple;
+            transform: rotateY(-270deg) translateZ(250px);
+        }
+        /*上面*/
+        .box2 li:nth-child(5){
+            background-color: yellowgreen;
+            transform: rotateX(90deg) translateZ(-250px);
+        }/*下面*/
+        .box2 li:nth-child(6){
+            background-color: skyblue;
+            transform: rotateX(90deg) translateZ(250px);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1 class="game_title">2048小游戏</h1>
-        <a href="javascript:newGame();" id="newgame_btn">重新开始</a>
-    </header>
-    <main>
-        <table id="checkerBoard"></table>
-        <p class="number_title">得分：<span id="show_number"></span> 分</p>
-    </main>
-    <footer class="inner">
-        <p class="operation_pc">电脑：请用键盘方向键操作游戏</p>
-        <p class="operation_phone">手机：请滑动手机屏幕操作游戏</p>
-    </footer>
-    <script type="application/javascript" src="./js/main.js"></script>
-    <script type="application/javascript" src="./js/gameOver.js"></script>
-    <script type="application/javascript" src="./js/move.js"></script>
+<ul class="box1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<ul class="box2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
 </body>
 </html>
