@@ -1,1 +1,131 @@
-<!DOCTYPE html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>小盈问答</title><meta name=viewport content="width=1200"><meta name=viewport content="user-scalable=0"><meta http-equiv=X-UA-Compatible content="IE=edge"><meta http-equiv=X-UA-Compatible content="IE=EmulateIE7"><meta http-equiv=X-UA-Compatible content="chrome=1"><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><link rel="shortcut icon" type=image/x-icon href=static/favicon.ico><link href=./static/css/app.2d3a8f5e3b55d77c6e8fd7fc2a69a5f0.css rel=stylesheet></head><body><div id=app></div><script type=text/javascript src=./static/js/manifest.f27e875e74f83dce4857.js></script><script type=text/javascript src=./static/js/vendor.260e6991b2595b204573.js></script><script type=text/javascript src=./static/js/app.1243ba9a6028344d429c.js></script></body></html>
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>双面魔方</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+       ul {
+            animation: rota 8s infinite;
+        }
+        @keyframes rota {
+            100%{
+                transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+        }
+        }
+        .box1 {
+              width: 200px;
+              margin: 200px auto;
+              list-style: none;
+              transform-style: preserve-3d;
+              position: relative;
+              transition:all 8s;
+          }
+        .box2{
+            width: 200px;
+            margin: 200px auto;
+            list-style: none;
+            transform-style: preserve-3d;
+            position: relative;
+            transition:all 8s;
+        }
+        .box1 li {
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            /*opacity: .8;*/
+        }
+        .box2 li {
+            border-radius: 10px;
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            opacity: .5;
+        }
+        /*背面*/
+        .box1 li:nth-child(1){
+            background-color: red;
+            transform: translateZ(-75px);
+        }
+        /*正面*/
+        .box1 li:nth-child(2){
+            background-color: orange;
+            transform: translateZ(75px);
+        }
+        /*左边*/
+        .box1 li:nth-child(3){
+            background-color: hotpink;
+            transform: rotateY(-90deg) translateZ(75px);
+        }
+        /*右边*/
+        .box1 li:nth-child(4){
+            background-color: purple;
+            transform: rotateY(-270deg) translateZ(75px);
+        }
+        /*上面*/
+        .box1 li:nth-child(5){
+            background-color: yellowgreen;
+            transform: rotateX(90deg) translateZ(-75px);
+        }/*下面*/
+        .box1 li:nth-child(6){
+            background-color: skyblue;
+            transform: rotateX(90deg) translateZ(75px);
+        }
+
+
+
+        /*背面*/
+        .box2 li:nth-child(1){
+            background-color: red;
+            transform: translateZ(-250px);
+        }
+        /*正面*/
+        .box2 li:nth-child(2){
+            background-color: orange;
+            transform: translateZ(250px);
+        }
+        /*左边*/
+        .box2 li:nth-child(3){
+            background-color: hotpink;
+            transform: rotateY(-90deg) translateZ(250px);
+        }
+        /*右边*/
+        .box2 li:nth-child(4){
+            background-color: purple;
+            transform: rotateY(-270deg) translateZ(250px);
+        }
+        /*上面*/
+        .box2 li:nth-child(5){
+            background-color: yellowgreen;
+            transform: rotateX(90deg) translateZ(-250px);
+        }/*下面*/
+        .box2 li:nth-child(6){
+            background-color: skyblue;
+            transform: rotateX(90deg) translateZ(250px);
+        }
+    </style>
+</head>
+<body>
+<ul class="box1">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+
+<ul class="box2">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>
